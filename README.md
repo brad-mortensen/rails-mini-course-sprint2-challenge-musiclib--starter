@@ -99,20 +99,20 @@ The client dev team has requested the following routes be made available for pla
 | GET  | song     | /api/v1/playlist/:playlist_id/songs | api/v1/songs#index     | list all songs                         |
 | POST | song     | /api/v1/playlist/:playlist_id/songs | api/v1/songs#create    | add a song to a playlist               |
 
-1. Add the playlist route to show a specific playlist.
-2. Nested within the user resource, add the playlist routes to list and create playlists.
-3. Nested within the playlist resource, add the song routes to list and create songs.
-4. Limit routes to only the ones expected by the client app team.
+1. Add the playlist route to show a specific playlist.√
+2. Nested within the user resource, add the playlist routes to list and create playlists. √
+3. Nested within the playlist resource, add the song routes to list and create songs. √
+4. Limit routes to only the ones expected by the client app team. √
 
 ### Playlist Controller
 
 Create playlist controller and implement the `index`, `create` and `show` actions to respond to the routes you created.
 
-1. `index` should only work if nested under user.
-2. `show` should only work without nesting.
-3. `create` should only work if nested under a user.
+1. `index` should only work if nested under user. √
+2. `show` should only work without nesting. √
+3. `create` should only work if nested under a user. √
 
-## Step Two - Add Playlist and PlaylistSong Models
+## Step Two - Add Playlist and PlaylistSong Models √
 
 **`Playlist`**
 
@@ -138,9 +138,9 @@ Create playlist controller and implement the `index`, `create` and `show` action
 
 We need to add a playlist model to the app so that users can create playlists and add songs to them.
 
-1. Add a Playlist ActiveRecord model to the app.
-2. Create and run a migration to set the attributes of the playlist model in the database to match the table above.
-3. Add a validation to the model that ensures playlists always have names.
+1. Add a Playlist ActiveRecord model to the app. √
+2. Create and run a migration to set the attributes of the playlist model in the database to match the table above. √
+3. Add a validation to the model that ensures playlists always have names. √
 
 ### PlaylistSong Migration and Model
 
@@ -153,11 +153,11 @@ We need a way to associate songs and playlists but we can't do it directly becau
 
 Now, we need to set up the various active record associations in the model files to let rails now how our playlist and playlist songs related to themselves and other models.
 
-1. Add an association to user represting that it can have many associated playlists
-2. Add an association to playlist represting that it can have many associated playlist_songs
-3. Add an association to playlist represting that it can have many songs via the playlist_songs association
-4. Add associations to playlist_song represting that a playlist_song belongs to both a playlist and a song
-5. Add associations to song represting that they can have many playlist_songs and have_many playlists via playlist_songs
+1. Add an association to user represting that it can have many associated playlists √
+2. Add an association to playlist represting that it can have many associated playlist_songs √
+3. Add an association to playlist represting that it can have many songs via the playlist_songs association √
+4. Add associations to playlist_song represting that a playlist_song belongs to both a playlist and a song √
+5. Add associations to song represting that they can have many playlist_songs and have_many playlists via playlist_songs √
 
 ## Step Three - Refactor and Improve Implementation
 
@@ -193,12 +193,12 @@ Like the `length_seconds` value, the sorting of songs is done in the song contro
 
 The album#index controller action has two queries that order by the album name and searches for only albums that are available. This common query should be converted into a scope on album named `available` that lists only available albums ordered by name.
 
-1. Convert album query to scope named `available`.
-2. Use `available` scope instead of the `where` and `order` queries for both albums and artist's albums.
+1. Convert album query to scope named `available`. √
+2. Use `available` scope instead of the `where` and `order` queries for both albums and artist's albums. √
 
 The query also results in an n+1 query because each album's songs are loaded after querying for the list of albums. Prevent this n+1 query in the controller by including the songs in the query.
 
-1. Solve inefficient n+1 query by including songs
+1. Solve inefficient n+1 query by including songs √
 
 
 ## Step Four - Write Specs for Album
@@ -220,3 +220,6 @@ The `spec/requests/api/v1/albums/get_album_spec.rb` needs to be completed by tes
 ### Uncomment the routes spec and run the full spec suite
 
 Uncomment the file located `spec/routing/api/v1/api_routes_spec.rb` and run the full spec suite. This file tests the routes that are defined in `config/routes.rb` and ensures they go to the appropriate controller. If all of the routes for playlist and songs were properly added, this spec should pass.
+
+
+Inits -- Brad Mortensen
