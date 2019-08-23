@@ -102,17 +102,17 @@ The client dev team has requested the following routes be made available for pla
 1. Add the playlist route to show a specific playlist.√
 2. Nested within the user resource, add the playlist routes to list and create playlists. √
 3. Nested within the playlist resource, add the song routes to list and create songs. √
-4. Limit routes to only the ones expected by the client app team.
+4. Limit routes to only the ones expected by the client app team. √
 
 ### Playlist Controller
 
 Create playlist controller and implement the `index`, `create` and `show` actions to respond to the routes you created.
 
-1. `index` should only work if nested under user.
-2. `show` should only work without nesting.
-3. `create` should only work if nested under a user.
+1. `index` should only work if nested under user. √
+2. `show` should only work without nesting. √
+3. `create` should only work if nested under a user. √
 
-## Step Two - Add Playlist and PlaylistSong Models
+## Step Two - Add Playlist and PlaylistSong Models √
 
 **`Playlist`**
 
@@ -138,9 +138,9 @@ Create playlist controller and implement the `index`, `create` and `show` action
 
 We need to add a playlist model to the app so that users can create playlists and add songs to them.
 
-1. Add a Playlist ActiveRecord model to the app.
-2. Create and run a migration to set the attributes of the playlist model in the database to match the table above.
-3. Add a validation to the model that ensures playlists always have names.
+1. Add a Playlist ActiveRecord model to the app. √
+2. Create and run a migration to set the attributes of the playlist model in the database to match the table above. √
+3. Add a validation to the model that ensures playlists always have names. √
 
 ### PlaylistSong Migration and Model
 
@@ -153,11 +153,11 @@ We need a way to associate songs and playlists but we can't do it directly becau
 
 Now, we need to set up the various active record associations in the model files to let rails now how our playlist and playlist songs related to themselves and other models.
 
-1. Add an association to user represting that it can have many associated playlists
-2. Add an association to playlist represting that it can have many associated playlist_songs
-3. Add an association to playlist represting that it can have many songs via the playlist_songs association
-4. Add associations to playlist_song represting that a playlist_song belongs to both a playlist and a song
-5. Add associations to song represting that they can have many playlist_songs and have_many playlists via playlist_songs
+1. Add an association to user represting that it can have many associated playlists √
+2. Add an association to playlist represting that it can have many associated playlist_songs √
+3. Add an association to playlist represting that it can have many songs via the playlist_songs association √
+4. Add associations to playlist_song represting that a playlist_song belongs to both a playlist and a song √
+5. Add associations to song represting that they can have many playlist_songs and have_many playlists via playlist_songs √
 
 ## Step Three - Refactor and Improve Implementation
 
