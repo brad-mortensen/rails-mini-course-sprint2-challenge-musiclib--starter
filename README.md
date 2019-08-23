@@ -99,9 +99,9 @@ The client dev team has requested the following routes be made available for pla
 | GET  | song     | /api/v1/playlist/:playlist_id/songs | api/v1/songs#index     | list all songs                         |
 | POST | song     | /api/v1/playlist/:playlist_id/songs | api/v1/songs#create    | add a song to a playlist               |
 
-1. Add the playlist route to show a specific playlist.
-2. Nested within the user resource, add the playlist routes to list and create playlists.
-3. Nested within the playlist resource, add the song routes to list and create songs.
+1. Add the playlist route to show a specific playlist.√
+2. Nested within the user resource, add the playlist routes to list and create playlists. √
+3. Nested within the playlist resource, add the song routes to list and create songs. √
 4. Limit routes to only the ones expected by the client app team.
 
 ### Playlist Controller
