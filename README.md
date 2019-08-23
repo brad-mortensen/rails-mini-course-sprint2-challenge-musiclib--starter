@@ -193,12 +193,12 @@ Like the `length_seconds` value, the sorting of songs is done in the song contro
 
 The album#index controller action has two queries that order by the album name and searches for only albums that are available. This common query should be converted into a scope on album named `available` that lists only available albums ordered by name.
 
-1. Convert album query to scope named `available`.
-2. Use `available` scope instead of the `where` and `order` queries for both albums and artist's albums.
+1. Convert album query to scope named `available`. √
+2. Use `available` scope instead of the `where` and `order` queries for both albums and artist's albums. √
 
 The query also results in an n+1 query because each album's songs are loaded after querying for the list of albums. Prevent this n+1 query in the controller by including the songs in the query.
 
-1. Solve inefficient n+1 query by including songs
+1. Solve inefficient n+1 query by including songs √
 
 
 ## Step Four - Write Specs for Album

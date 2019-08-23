@@ -4,7 +4,10 @@ class Album < ApplicationRecord
 
   validates :name, presence: true
 
+  scope :available, -> {where(available:true).order(:name)} 
+
   def length_seconds
-    self.songs.reduce(0) {|length, song| length + song.length_seconds}
+    songs.reduce(0) {|length, song| length + song.length_seconds}
   end
+  
 end
