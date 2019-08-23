@@ -15,13 +15,7 @@ module Api
 
       def create
         @user = User.find(params[:user_id])
-        @user_playlist = @user.user_playlists.build(user_playlist_params)
-      end
-
-      private
-
-      def user_playlist_params
-        params.require(:playlist).permit(:playlist_id)
+        @user_playlist = @user.playlists.build()
       end
     end
   end
