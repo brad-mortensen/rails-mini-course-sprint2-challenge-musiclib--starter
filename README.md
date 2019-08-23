@@ -220,3 +220,6 @@ The `spec/requests/api/v1/albums/get_album_spec.rb` needs to be completed by tes
 ### Uncomment the routes spec and run the full spec suite
 
 Uncomment the file located `spec/routing/api/v1/api_routes_spec.rb` and run the full spec suite. This file tests the routes that are defined in `config/routes.rb` and ensures they go to the appropriate controller. If all of the routes for playlist and songs were properly added, this spec should pass.
+
+
+Inits -- Brad Mortensen
